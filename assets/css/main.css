@@ -1033,6 +1033,11 @@ section,
 /* Adjust the container height */
 /* Adjust the container height */
 /* Adjust the container and slider styling */
+#portfolio {
+  width: 100%;
+  height: auto; /* Adjust the height as per your need */
+}
+/* Swiper container and slides */
 .swiper-container {
   width: 100%;
   height: auto;
@@ -1051,25 +1056,38 @@ section,
   max-height: 500px;
 }
 
-/* Control visibility of the adjacent slides */
-.swiper-container {
-  padding: 0 40px; /* Allows room for next/previous slide peeking */
-}
-
-.swiper-slide {
-  width: auto; /* Allow flexibility for the side images */
-  max-width: 70%; /* Limit the size of each slide (adjust based on design) */
-}
+/* Pagination bullets */
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #000; /* Color of the bullets */
+  background-color: #000; /* Black bullets */
   opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff6347; /* Active bullet color */
+  background-color: #fff; /* White active bullet */
   opacity: 1;
 }
+
+/* Swiper navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: #000; /* Color of the buttons */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px; /* Size of the button */
+  height: 40px; /* Size of the button */
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+
 
 
