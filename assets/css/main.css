@@ -937,28 +937,34 @@ section,
   display: grid;
   position: relative;
   grid-template-columns: repeat(12, 1fr);
-  
-   /* Space between items */
+ 
+  margin-top: -100%;
+  gap: 0; 
   align-items: center; /* Center items vertically */
-  margin-top: 20px;
+  margin-top: 0px;
+  padding: 0;
 }
 
 .black-rectangle {
   grid-column: 1 / -1; /* Takes the first 6 columns */
-  grid-row: 1 / -1;/* Fixed height */
+  grid-row: 1;
   width: 100%; /* Adjust width as needed */
-  height: 350px; /* Adjust height as needed */
+  height: 400px; /* Adjust height as needed */
   background-color: black;
+  
+  position: relative;
+  margin-bottom: -130px;
 }
 
 .white-rectangle {
+  position: relative;
+  grid-row: 1;
   grid-column: 2 / -2; /* Takes the first 6 columns */
-  grid-row: 1 / -1;/* Fixed height */
   width: 100%; /* Adjust width as needed */
-  height: 400px; /* Adjust height as needed */
-  margin-bottom: 20%;
+  height: 350px; /* Adjust height as needed */
   background-color: rgb(255, 255, 255);
   z-index: 2;
+  margin-top: 0;
 }
 
 .image-1 {
@@ -967,7 +973,7 @@ section,
   width: 30%;
   height: 300px;
   z-index: 2;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-left: 4%;
   object-fit: cover;
 }
@@ -979,7 +985,7 @@ section,
   height: 300px;
   margin-left: 10px;
   z-index: 2;
-  margin-top: 80px;
+  margin-top: 20px;
   object-fit: cover;
   
 }
@@ -988,7 +994,7 @@ section,
   .white-rectangle {
       flex-direction: column; /* Stack images vertically */
       align-items: center; /* Center images horizontally */
-      margin-top: -30px;
+      margin-top: 50px;
   }
 
   .image-1 {
