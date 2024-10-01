@@ -763,30 +763,61 @@ section,
   grid-row:  2 / span 4;
   background-color: rgb(0, 255, 51);
   height: 300px; /* Fixed height */
-  display: flex; /* Use flexbox for centering */
    /* Horizontally center the content */
   z-index: 1;
 }
 
 .vsitem-4 {
-  grid-column: 4 / -1; /* Takes the first 6 columns */
-  grid-row:  7 / 5;
+  margin-top: -8%;
+  margin-left: 10%;
   background-color: rgb(16, 16, 16);
-  height: 180px; /* Fixed height */
+  height: 250px; /* Fixed height */
   display: flex; /* Use flexbox for centering */
-   /* Horizontally center the content */
+  
   
 }
 
 .vsitem-5 {
-  grid-column: 9 / -1; /* Takes the first 6 columns */
-  grid-row:  3 / span 3;
+  margin-top: -7%;
+  margin-left: 66%;
   background-color: rgb(67, 126, 214);
-  height: 120px; /* Fixed height */
+  height: 180px; /* Fixed height */
   display: flex; /* Use flexbox for centering */
-   /* Horizontally center the content */
-   z-index: 1;
+  width: 40%;/* Horizontally center the content */
+  z-index: 2;
   
+}
+
+.image-3 {
+  width: 40%;
+  height: 350px;
+  z-index: 2;
+  margin-top: -15%;
+  margin-left: -5%;
+  object-fit: cover;
+
+}
+@media (max-width: 1068px) {
+  .vsitem-4  {
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+    height: 150px;
+}
+  .vsitem-5  {
+      flex-direction: column; /* Stack images vertically */
+      align-items: center; /* Center images horizontally */
+      height: 60%;
+      z-index: 2;
+  }
+
+  .image-3 {
+      width: 55%; /* Full width for mobile */
+      height: 55%;
+      margin-left: -1%; /* Remove left margin */
+      max-height: none;
+      margin-top: 10%;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -951,7 +982,6 @@ section,
   width: 100%; /* Adjust width as needed */
   height: 400px; /* Adjust height as needed */
   background-color: black;
-  
   position: relative;
   margin-bottom: -130px;
 }
@@ -979,7 +1009,7 @@ section,
 }
 
 .image-2 {
-  grid-column: -10 / span 20; /* Takes the first 6 columns */
+  grid-column: 2 / span 20; /* Takes the first 6 columns */
   grid-row: 1 / span 2;
   width: 60%;
   height: 300px;
@@ -1046,6 +1076,18 @@ section,
 /*--------------------------------------------------------------
 # Vision and mission Section
 --------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 .vsitem-4-image:first-child {
 
