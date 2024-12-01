@@ -29,10 +29,10 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #3a3939;  /* The default color of the main navmenu links */
+  --nav-color: #00A6FF;  /* The default color of the main navmenu links */
   --nav-hover-color: #00A6FF; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-mobile-background-color: #00A6FF; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #010101; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #3a3939; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #00A6FF; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
@@ -87,13 +87,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-h2
-{
-  
-}
-
-
-
 p {
   font-family: 'Nunito', sans-serif;
   font-weight: 400; /* Regular weight */
@@ -112,7 +105,7 @@ p {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #00A6FF;
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -201,27 +194,31 @@ p {
 --------------------------------------------------------------*/
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
-  .navmenu {
-    padding: 0;
-  }
-
-  .navmenu ul {
+  .navbar {
+  position: fixed; /* Makes the navbar fixed */
+  top: 0;
+  width: 100%; /* Stretches the navbar across the viewport */
+  z-index: 1000; /* Ensures it stays on top *//* Optional shadow for aesthetics */
+}
+  .navbar ul {
     margin: 0;
-    padding: 0;
+    margin-left: 25%;
+    position: relative;
     display: flex;
     list-style: none;
     align-items: center;
   }
 
-  .navmenu li {
+  .navbar li {
     position: relative;
+    font-size: medium;
   }
 
-  .navmenu a,
+  .navbar a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
+    padding: 20px 15px;
+    font-size: 20px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
@@ -229,82 +226,28 @@ p {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    margin-left: 0;
   }
 
-  .navmenu a i,
-  .navmenu a:focus i {
+  .navbar a i,
+  .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
   }
 
-  .navmenu li:last-child a {
+  .navbar li:last-child a {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
-  .navmenu .active,
-  .navmenu .active:focus {
+  .navbar li:hover>a,
+  .navbar .active,
+  .navbar .active:focus {
     color: var(--nav-hover-color);
   }
-
-  .navmenu .dropdown ul {
-    margin: 0;
-    padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
-    display: block;
-    position: absolute;
-    visibility: hidden;
-    left: 14px;
-    top: 130%;
-    opacity: 0;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .navmenu .dropdown ul li {
-    min-width: 200px;
-  }
-
-  .navmenu .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    color: var(--nav-dropdown-color);
-  }
-
-  .navmenu .dropdown ul a i {
-    font-size: 12px;
-  }
-
-  .navmenu .dropdown ul a:hover,
-  .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-
-  .navmenu .dropdown .dropdown ul {
-    top: 0;
-    left: -90%;
-    visibility: hidden;
-  }
-
-  .navmenu .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: -100%;
-    visibility: visible;
-  }
 }
+
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
@@ -320,12 +263,13 @@ p {
   .navmenu {
     padding: 0;
     z-index: 9997;
+    position: fixed;
   }
 
   .navmenu ul {
     display: none;
     list-style: none;
-    position: absolute;
+    position: fixed;
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
@@ -385,25 +329,173 @@ p {
     transform: rotate(180deg);
   }
 
-  .navmenu .dropdown ul {
-    position: static;
-    display: none;
-    z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
-    background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
+  .mobile-nav-active {
+    overflow: hidden;
   }
 
-  .navmenu .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+  position: fixed; /* Makes the navbar fixed */
+  top: 0;
+  width: 100%; /* Stretches the navbar across the viewport */
+  background-color: #00A6FF; /* Dark background */
+  z-index: 1000; /* Ensures it stays on top *//* Optional shadow for aesthetics */
+}
+  .navmenu ul {
+    margin: 0;
+    margin-left: 25%;
+    position: relative;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+    font-size: medium;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 20px 15px;
+    font-size: 20px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+    margin-left: 0;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+    position: fixed;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: fixed;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
   }
 
   .mobile-nav-active {
@@ -679,7 +771,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 80px 0;
   scroll-margin-top: 98px;
   overflow: clip;
   border: 5px solid rgb(62, 61, 61);
@@ -778,12 +870,12 @@ section,
 }
 
 .vsitem-5 {
-  margin-top: -7%;
+  margin-top: -5%;
   margin-left: 66%;
   background-color: rgb(67, 126, 214);
   height: 180px; /* Fixed height */
   display: flex; /* Use flexbox for centering */
-  width: 40%;/* Horizontally center the content */
+  width: 50%;/* Horizontally center the content */
   z-index: 2;
   
 }
@@ -793,7 +885,7 @@ section,
   height: 350px;
   z-index: 2;
   margin-top: -15%;
-  margin-left: -5%;
+  margin-left: -7%;
   object-fit: cover;
 
 }
@@ -801,7 +893,9 @@ section,
   .vsitem-4  {
     flex-direction: column; /* Stack images vertically */
     align-items: center; /* Center images horizontally */
-    height: 150px;
+    height: 180px;
+    margin-left: 20%;
+    margin-top: -25%;
 }
   .vsitem-5  {
       flex-direction: column; /* Stack images vertically */
@@ -884,7 +978,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 60px; 
   position: relative;
 }
 
@@ -958,17 +1052,19 @@ section,
   height: 4px;
   background: var(--accent-color);
   left: 0;
-  margin-top: 20%; /* Positions underline 10px below the heading */
+  margin-top: 10%; /* Positions underline 10px below the heading */
 }
 
-
+.container[data-aos="fade-up"] {
+  margin-top: 20px; /* Adjust the value as needed */
+  padding-top: 20px; /* Or use padding if you prefer */
+}
 
 
 .grid-container {
   display: grid;
   position: relative;
   grid-template-columns: repeat(12, 1fr);
- 
   margin-top: -100%;
   gap: 0; 
   align-items: center; /* Center items vertically */
@@ -1079,16 +1175,6 @@ section,
 
 
 
-
-
-
-
-
-
-
-
-
-
 .vsitem-4-image:first-child {
 
   margin-right: 0px;
@@ -1174,7 +1260,7 @@ section,
 
 
 /*--------------------------------------------------------------
-# Portfolio Section
+# Projects Section
 --------------------------------------------------------------*/
 /* Container to hide overflowing images */
 /* General slider styles */
@@ -1183,61 +1269,29 @@ section,
 /* Adjust the container height */
 /* Adjust the container height */
 /* Adjust the container and slider styling */
-#portfolio {
-  width: 100%;
-  height: auto; /* Adjust the height as per your need */
-}
-/* Swiper container and slides */
-.swiper-container {
-  width: 100%;
-  height: auto;
+
+
+.grid-image {
+  width: 100%; /* Ensure images are responsive within their container */
+  max-width: 450px; /* Maintain the intended size */
+  height: 450px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures proper cropping if needed */
+  border-radius: 10px; /* Rounds the corners of the image */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for a better visual effect */
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.container {
+  padding-top: 20px; /* Add space at the top if required */
 }
 
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 500px;
+.row.gy-4 {
+  row-gap: 30px; /* Equal spacing between rows */
 }
 
-/* Pagination bullets */
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #000; /* Black bullets */
-  opacity: 0.5;
+.col-lg-6 {
+  padding: 10px; /* Equal spacing inside the grid items */
 }
-
-.swiper-pagination-bullet-active {
-  background-color: #fff; /* White active bullet */
-  opacity: 1;
-}
-
-/* Swiper navigation buttons */
-.swiper-button-next, .swiper-button-prev {
-  color: #000; /* Color of the buttons */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 40px; /* Size of the button */
-  height: 40px; /* Size of the button */
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-button-prev {
-  left: 10px;
-}
-
 
 
 
