@@ -248,7 +248,6 @@ p {
   }
 }
 
-
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
@@ -260,13 +259,13 @@ p {
     transition: color 0.3s;
   }
 
-  .navmenu {
+  .navbar {
     padding: 0;
     z-index: 9997;
     position: fixed;
   }
 
-  .navmenu ul {
+  .navbar ul {
     display: none;
     list-style: none;
     position: fixed;
@@ -281,8 +280,8 @@ p {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .navmenu a,
-  .navmenu a:focus {
+  .navbar a,
+  .navbar a:focus {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
@@ -295,8 +294,8 @@ p {
     transition: 0.3s;
   }
 
-  .navmenu a i,
-  .navmenu a:focus i {
+  .navbar a i,
+  .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -310,20 +309,20 @@ p {
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
+  .navbar a i:hover,
+  .navbar a:focus i:hover {
     background-color: var(--accent-color);
     color: var(--contrast-color);
   }
 
-  .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .active i,
-  .navmenu .active:focus i {
+  .navbar .active i,
+  .navbar .active:focus i {
     background-color: var(--accent-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
@@ -343,7 +342,7 @@ p {
     z-index: 9999;
   }
 
-  .mobile-nav-active .navmenu {
+  .mobile-nav-active .navbar {
     position: fixed;
     overflow: hidden;
     inset: 0;
@@ -351,11 +350,10 @@ p {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navbar>ul {
     display: block;
   }
 }
-
 
 
 /*--------------------------------------------------------------
