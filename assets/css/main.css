@@ -1294,9 +1294,10 @@ section,
 
 
 .item-2-heading {
+  margin-left: 105%;
   position: relative;
   text-align: center;
-  margin-left: 105%;
+  
   display: inline-block;
   font-size: 40px; /* Increased font size */
   font-weight: 800; /* Extra Bold */
@@ -1314,4 +1315,133 @@ section,
   background: var(--accent-color);
   left: 0;
   margin-top: 10%; /* Positions underline 10px below the heading */
+}
+
+
+/*--------------------------------------------------------------
+# Contacts Section
+--------------------------------------------------------------*/
+
+
+.citem-4-image:first-child {
+
+  margin-right: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.icons { /* Define the height, no quotes needed */
+  padding-top: 40px; /* Padding for the icon */
+}
+
+
+
+.text-section {
+  flex: 1; /* Text section takes up the rest of the space */
+  margin-left: 0px; /* Space between the icon and the text */
+}
+
+.title {
+  font-size: 24px; /* Larger font size for the title */
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.title h3{
+  font-size: 22px; /* Larger font size for the title */
+  font-weight: bold;
+  padding-bottom: 17px;
+  padding-top: 17px;
+}
+
+.paragraph {
+  font-size: 16px; /* Regular font size for the paragraph */
+  line-height: 1.5; /* Space between lines */
+}
+
+/*--------------------------------------------------------------
+# flex Contacts Section
+--------------------------------------------------------------*/
+.cflex{
+  margin: 0;
+  display: flex;
+  height: 500px;
+  width: 100vw;
+}
+
+.left {
+  flex: 1;
+  background-color: #fff;
+}
+
+.right {
+  margin-top: -30px;
+  margin-right: -80px;
+  flex: 1.1;
+  height: 150%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.center-image {
+  position: absolute;
+  top: 52%;
+  left:45%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height: 70%;
+  width: 30%;
+}
+
+.contact-head {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.contact-1-heading {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  font-size: 50px; /* Increased font size */
+  font-weight: 800; /* Extra Bold */
+  font-family: 'Montserrat', sans-serif; /* Montserrat as a similar substitute */
+  padding-bottom: 10px; /* Adds space between text and underline */
+}
+
+.contact-1-heading::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  left: 0;
+  margin-top: 50%; /* Positions underline 10px below the heading */
+}
+
+.blue-box{
+  position: absolute;
+  top: 63%;
+  left: 17.5%;
+  transform: translateX(-50%);
+  background-color: var(--nav-mobile-background-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 0;
+  font-size: 22px;
+  height: 169.2px;
+  max-width: 320px;
+
 }
