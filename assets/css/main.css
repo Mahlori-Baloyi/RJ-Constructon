@@ -833,7 +833,7 @@ section,
   background-color: rgb(255, 255, 255);
   height: 200px; /* Fixed height */
   display: flex; /* Use flexbox for centering */
-   /* Horizontally center the content */
+  /* Horizontally center the content */
   
 }
 
@@ -1382,13 +1382,6 @@ section,
   flex: 1.1;
   height: 150%;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:flex-start;
-  color: white;
-  padding: 20px;
-  text-align: center;
 }
 
 .center-image {
@@ -1413,7 +1406,7 @@ section,
   position: relative;
   text-align: center;
   display: inline-block;
-  font-size: 50px; /* Increased font size */
+  font-size: 290%; /* Increased font size */
   font-weight: 800; /* Extra Bold */
   font-family: 'Montserrat', sans-serif; /* Montserrat as a similar substitute */
   padding-bottom: 10px; /* Adds space between text and underline */
@@ -1440,8 +1433,21 @@ section,
   padding: 20px;
   text-align: center;
   z-index: 0;
-  font-size: 22px;
-  height: 169.2px;
-  max-width: 320px;
+  font-size: 120%;
+  height: 23.5%;
+  max-width: 25%;
 
+}
+
+.contacts-text {
+  color: white; /* White color for both text and icon */
+  text-align: left; 
+  padding-left: 30%;
+  font-size: 120%; /* Base font size (responsive) */
+  font-family: Arial, sans-serif; /* Set font style */
+}
+
+.contacts-icons {
+  padding-left: 30%;
+  padding-top: 5%;
 }
