@@ -1321,137 +1321,155 @@ section,
 /*--------------------------------------------------------------
 # flex Contacts Section
 --------------------------------------------------------------*/
-.cflex{
-  margin: 0;
-  display: flex;
-  height: 500px;
-  width: 100vw;
-}
 
-.left {
-  flex: 1;
-  background-color: #fff;
-}
-
-.right {
-  margin-top: -30px;
-  margin-right: -80px;
-  flex: 1.1;
-  height: 150%;
-  background-color: black;
-}
-
-.center-image {
-  position: absolute;
-  top: 52%;
-  left:45%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  height: 70%;
-  width: 30%;
-}
-
-.contact-head {
-  position: absolute;
-  top: 25%;
-  left: 5%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.contact-1-heading {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  font-size: 290%; /* Increased font size */
-  font-weight: 800; /* Extra Bold */
-  font-family: 'Montserrat', sans-serif; /* Montserrat as a similar substitute */
-  padding-bottom: 10px; /* Adds space between text and underline */
-}
-
-.contact-1-heading::after {
-  content: "";
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent-color);
-  left: 0;
-  margin-top: 50%; /* Positions underline 10px below the heading */
-}
-
-.blue-box{
-  position: absolute;
-  top: 63%;
-  left: 17.5%;
-  transform: translateX(-50%);
-  background-color: var(--nav-mobile-background-color);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  z-index: 0;
-  font-size: 120%;
-  height: 23.5%;
-  max-width: 25%;
-
-}
-
-.contacts-text {
-  color: white; /* White color for both text and icon */
-  text-align: left; 
-  padding-left: 30%;
-  font-size: 120%; /* Base font size (responsive) */
-  font-family: Arial, sans-serif; /* Set font style */
-}
-
-.contacts-icons {
-  padding-left: 30%;
-  padding-top: 5%;
-}
-
-
-@media (max-width: 768px) {
-    
+@media(min-width:1068px){
   
-    
+  .mobile {
+    display: none;
+  }
+  .cflex{
+    margin: 0;
+    display: flex;
+    height: 500px;
+    width: 100vw;
+  }
+
+  .left {
+    flex: 1;
+    background-color: #fff;
+  }
+
+  .right {
+    margin-top: -30px;
+    margin-right: -80px;
+    flex: 1.1;
+    height: 150%;
+    background-color: black;
+  }
+
+  .center-image {
+    position: absolute;
+    top: 52%;
+    left:45%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    height: 70%;
+    width: 30%;
+  }
+
+  .contact-head {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .contact-1-heading {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-size: 290%; /* Increased font size */
+    font-weight: 800; /* Extra Bold */
+    font-family: 'Montserrat', sans-serif; /* Montserrat as a similar substitute */
+    padding-bottom: 10px; /* Adds space between text and underline */
+  }
+
+  .contact-1-heading::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    left: 0;
+    margin-top: 50%; /* Positions underline 10px below the heading */
+  }
+
+  .blue-box{
+    position: absolute;
+    top: 63%;
+    left: 17.5%;
+    transform: translateX(-50%);
+    background-color: var(--nav-mobile-background-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 0;
+    font-size: 120%;
+    height: 23.5%;
+    max-width: 25%;
+
+  }
+
+  .contacts-text {
+    color: white; /* White color for both text and icon */
+    text-align: left; 
+    padding-left: 30%;
+    font-size: 120%; /* Base font size (responsive) */
+    font-family: Arial, sans-serif; /* Set font style */
+  }
+
+  .contacts-icons {
+    padding-left: 30%;
+    padding-top: 5%;
+  }
+}
+
+
+@media (max-width: 1068px) {
+  .cflex{
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+
+  .contact-icons-grid {
+    grid-template-columns: 1fr; /* One column for smaller screens */
+    gap: 15px;
+  }
+
+  .contact-item span {
+    font-size: 1rem;
+  }
+
+  .contact-heading {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-size: 40px; /* Increased font size */
+    font-weight: 800; /* Extra Bold */
+    font-family: 'Montserrat', sans-serif; /* Montserrat as a similar substitute */
+    padding-bottom: 10px; /* Adds space between text and underline */
+    padding-left: 40px;
+  }
   
-    
-    .contact-1-heading {
-      position: absolute;
-      top: 50%; /* Vertically center */
-      left: 50%; /* Horizontally center */
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 10; /* Bring it above other elements */
-      color: rgb(242, 238, 238); /* Ensure visibility on a black background */
-    }
-    .blue-box {
-      display: none;
-    }
-
-    .center-image {
-      display: none;
-    }
-    .left {
-      display: none; /* Allow .contact-head to position itself properly */
-    }
-
+  .contact-heading::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    left: 0;
+    margin-top: 10%; /* Positions underline 10px below the heading */
+  }
     .contacts-text {
-      color: white; /* White color for both text and icon */
+      color: rgb(0, 0, 0); /* White color for both text and icon */
       text-align: left; 
-      padding-left: 30%;
-      font-size: 90%; /* Base font size (responsive) */
+      padding-left: 10%;
+      font-size: 120%; /* Base font size (responsive) */
       font-family: Arial, sans-serif; /* Set font style */
+      position: relative;
     }
     
     .contacts-icons {
-      padding-left: 30%;
+      padding-left: 10%;
       padding-top: 5%;
     }
 
-    #Contact {
-      background-color: black !important; /* Set black background for the section */
-    }
+
 
 }
 
