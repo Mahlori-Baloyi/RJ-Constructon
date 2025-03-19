@@ -434,7 +434,8 @@ p {
   }
 
   .mobile-nav-show {
-    position: relative;
+    position: fixed;
+    right: 20px;
     color: #fff;
     font-size: 28px;
     cursor: pointer;
@@ -443,6 +444,7 @@ p {
     z-index: 9999;
     padding-right: 10px;
   }
+
 
   .mobile-nav-hide {
     color: #fff;
